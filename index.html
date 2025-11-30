@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kangogo Evans | Full-Stack Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #e8eaed;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 30px 0 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    nav .logo {
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #00d4ff;
+      font-size: 1.1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      font-size: 0.95rem;
+    }
+
+    nav ul li a {
+      padding-bottom: 3px;
+      border-bottom: 2px solid transparent;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      border-color: #00d4ff;
+      color: #00d4ff;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 50px 0 60px;
+    }
+
+    .hero-text {
+      flex: 1 1 350px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+      background: linear-gradient(45deg, #00d4ff, #7928ca);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    .hero-text h2 {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #b0b8c1;
+      margin-bottom: 18px;
+    }
+
+    .hero-text p {
+      max-width: 540px;
+      margin-bottom: 25px;
+      color: #c5cad1;
+      font-size: 0.98rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      border-radius: 25px;
+      padding: 11px 24px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: linear-gradient(45deg, #00d4ff, #0099cc);
+      color: #fff;
+      border-color: #00d4ff;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #00d4ff;
+      border-color: #00d4ff;
+    }
+
+    .btn-outline:hover {
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .hero-photo {
+      flex: 0 1 240px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-photo div {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 3px solid #00d4ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      color: #00d4ff;
+      text-align: center;
+      background: rgba(0, 212, 255, 0.05);
+    }
+
+    section {
+      padding: 50px 0;
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      background: linear-gradient(45deg, #00d4ff, #7928ca);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+    }
+
+    .section-subtitle {
+      color: #b0b8c1;
+      margin-bottom: 28px;
+      font-size: 0.98rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: rgba(0, 212, 255, 0.05);
+      padding: 20px 22px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      transition: 0.3s;
+    }
+
+    .skill-card:hover {
+      border-color: #00d4ff;
+      background: rgba(0, 212, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+      color: #00d4ff;
+    }
+
+    .skill-card p {
+      font-size: 0.92rem;
+      color: #c5cad1;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: rgba(121, 40, 202, 0.08);
+      padding: 22px 22px 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(121, 40, 202, 0.2);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      border-color: #7928ca;
+      background: rgba(121, 40, 202, 0.15);
+      transform: translateY(-3px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 8px;
+      color: #7928ca;
+      font-size: 1.15rem;
+    }
+
+    .project-tech {
+      font-size: 0.85rem;
+      color: #00d4ff;
+      margin-bottom: 12px;
+      font-weight: 500;
+    }
+
+    .project-card p {
+      font-size: 0.92rem;
+      color: #c5cad1;
+      margin-bottom: 10px;
+    }
+
+    .project-card ul {
+      font-size: 0.85rem;
+      margin-left: 20px;
+      color: #b0b8c1;
+    }
+
+    .project-card li {
+      margin-bottom: 4px;
+    }
+
+    .about-content p {
+      margin-bottom: 14px;
+      color: #c5cad1;
+      font-size: 0.97rem;
+    }
+
+    .edu-item {
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+      color: #b0b8c1;
+    }
+
+    .edu-item strong {
+      display: block;
+      color: #00d4ff;
+      margin-bottom: 2px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 30px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+      color: #c5cad1;
+    }
+
+    .contact-info strong {
+      color: #00d4ff;
+    }
+
+    .contact-info a {
+      color: #00d4ff;
+      transition: 0.2s;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    input, textarea {
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid rgba(0, 212, 255, 0.2);
+      background: rgba(0, 212, 255, 0.05);
+      color: #e8eaed;
+      font-size: 0.92rem;
+      transition: 0.2s;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #00d4ff;
+      background: rgba(0, 212, 255, 0.1);
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+      font-family: inherit;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0 30px;
+      font-size: 0.8rem;
+      color: #7a8a99;
+      border-top: 1px solid rgba(0, 212, 255, 0.1);
+      margin-top: 30px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        padding-top: 30px;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      section h2 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <header id="top">
+    <div class="container">
+      <nav>
+        <div class="logo">KANGOGO EVANS</div>
+        <ul>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Hi, I’m Kangogo Evans.</h1>
+          <h2>Full‑Stack Developer & Systems Designer.</h2>
+          <p>
+            I build e‑commerce sites, business systems, and mobile‑friendly apps for Kenyan businesses using
+            React, Node.js, Express, and MongoDB. I help shops and SMEs move their operations online in a
+            practical, affordable way.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Hire Me</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+  <div>
+    KE<br />
+    <span style="font-size:0.8rem; color:#c5cad1;">Full‑Stack Developer</span>
+  </div>
+</div>
+
+  </header>
+
+  <main>
+    <section id="skills">
+      <div class="container">
+        <h2>What I Do</h2>
+        <p class="section-subtitle">
+          I combine full‑stack development, systems design, and basic networking to deliver complete solutions
+          for small businesses.
+        </p>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Web Development (MERN)</h3>
+            <p>
+              Business websites, product catalogs, and e‑commerce-style apps using HTML, CSS, JavaScript,
+              React, Node.js, Express, and MongoDB.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3>Systems & Apps</h3>
+            <p>
+              Custom systems such as management tools (e.g. Nekta Management System), inventory or booking
+              systems, and API-driven web apps.
+            </p>
+          </div>
+          <div class="skill-card">
+            <h3>Small Business Networking</h3>
+            <p>
+              Basic LAN/Wi‑Fi setup, router configuration, IP addressing, and troubleshooting to keep systems
+              online in shops and small offices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2>Selected Projects</h2>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>Luckmart – E‑commerce Platform</h3>
+            <div class="project-tech">React • Node.js • Express • MongoDB • JWT</div>
+            <p>
+              Jumia‑inspired online marketplace MVP with product listing, search, categories, cart, and secure
+              authentication.
+            </p>
+            <ul>
+              <li>Product listing, category filters, and search bar.</li>
+              <li>Cart and basic order flow with protected routes.</li>
+              <li>REST API built with Express and MongoDB Atlas.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h3>Electronics Shop Website – Catalog</h3>
+            <div class="project-tech">Web Catalog • Kenya Electronics Shop</div>
+            <p>
+              Responsive product catalog website for an electronics retailer, designed around a KES 20,000
+              budget for a clean, focused online presence.
+            </p>
+            <ul>
+              <li>Grid layout for phones, laptops, TVs, and accessories.</li>
+              <li>Simple “Order via WhatsApp/Call” actions instead of full checkout.</li>
+              <li>Guided client on domain, hosting, and content structure.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <h3>Nekta Management System – Bee‑Keeping</h3>
+            <div class="project-tech">Management System • KCSE Project</div>
+            <p>
+              Management system for a bee‑keeping company, built as a KCSE Computer Studies project to manage
+              operations and records.
+            </p>
+            <ul>
+              <li>Tracks hives, production, and sales records.</li>
+              <li>User‑friendly interface for non‑technical users.</li>
+              <li>Applied core CRUD and systems design principles.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <p>
+            I am a diploma‑trained developer (Computer Programming, Cooperative University of Kenya – Karen)
+            and a self‑driven full‑stack learner. I earned a B (Plain) in KCSE with an A in Computer Studies
+            and have been building real systems since high school.
+          </p>
+          <p>
+            From Nekta Management System for a bee‑keeping company to Luckmart, my own e‑commerce platform,
+            I enjoy turning real business problems into working software that is simple for owners and staff
+            to use.
+          </p>
+        </div>
+
+        <h3 style="margin-top:20px; margin-bottom:10px; font-size:1.1rem; color:#f6b93b;">
+          Education
+        </h3>
+        <div class="edu-item">
+          <strong>Diploma in Computer Programming</strong>
+          Cooperative University of Kenya – Karen Campus (2023 – 2025)
+        </div>
+        <div class="edu-item">
+          <strong>Kenya Certificate of Secondary Education (KCSE)</strong>
+          Chebara Boys High School (2019 – 2022) – B (Plain), A in Computer Studies
+        </div>
+        <div class="edu-item">
+          <strong>Primary Education</strong>
+          AIC Rorok Academy (2016 – 2018)
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Let’s Work Together</h2>
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p>
+              Need a website, system, or help putting your electronics shop or business online? Reach out and
+              let’s talk about what you want to build.
+            </p>
+            <p><strong>Email:</strong> <a href="mailto:kangogoevans6074@gmail.com">kangogoevans6074@gmail.com</a></p>
+            <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/254745909218" target="_blank">+254 745 909 218</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/sketch-tech-gif" target="_blank">github.com/sketch-tech-gif</a></p>
+          </div>
+
+          <div>
+            <form action="mailto:kangogoevans6074@gmail.com" method="post" enctype="text/plain">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+              <textarea name="message" placeholder="Tell me about your project" required></textarea>
+              <button type="submit" class="btn btn-primary" style="width:120px;">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Kangogo Evans · Full‑Stack Developer & Systems Designer
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
