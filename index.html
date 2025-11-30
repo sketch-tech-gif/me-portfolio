@@ -147,18 +147,14 @@
       justify-content: center;
     }
 
-    .hero-photo div {
+    .hero-photo img {
       width: 220px;
       height: 220px;
       border-radius: 50%;
       border: 3px solid #00d4ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.9rem;
-      color: #00d4ff;
-      text-align: center;
-      background: rgba(0, 212, 255, 0.05);
+      object-fit: cover;
+      background: #000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
     }
 
     section {
@@ -360,7 +356,6 @@
       }
     }
   </style>
-
 </head>
 <body>
   <header id="top">
@@ -368,7 +363,7 @@
       <nav>
         <div class="logo">KANGOGO EVANS</div>
         <ul>
-          <li><a href="#skills">Skills</a></li>
+          <li><a href="#skills">Services</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -377,34 +372,36 @@
 
       <div class="hero">
         <div class="hero-text">
-          <h1>Hi, I’m Kangogo Evans.</h1>
+          <h1>Building Practical Web Systems for SMEs</h1>
           <h2>Full‑Stack Developer & Systems Designer.</h2>
           <p>
-            I build e‑commerce sites, business systems, and mobile‑friendly apps for Kenyan businesses using
-            React, Node.js, Express, and MongoDB. I help shops and SMEs move their operations online in a
-            practical, affordable way.
+            I build e‑commerce sites, business systems, and mobile‑friendly apps using React, Node.js,
+            Express, and MongoDB. The goal is simple: give shops and small businesses clean, affordable tools
+            that work in the real world.
           </p>
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
             <a href="#contact" class="btn btn-outline">Hire Me</a>
+            <a href="Kangogo_Evans_CV.pdf" class="btn btn-outline" target="_blank" rel="noopener">
+              Download CV (PDF)
+            </a>
           </div>
         </div>
-        <div class="hero-photo">
-  <div>
-    KE<br />
-    <span style="font-size:0.8rem; color:#c5cad1;">Full‑Stack Developer</span>
-  </div>
-</div>
 
+        <div class="hero-photo">
+          <!-- change me.jpg to your actual image file name -->
+          <img src="Windows 11.jpeg" />
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
     <section id="skills">
       <div class="container">
-        <h2>What I Do</h2>
+        <h2>Services</h2>
         <p class="section-subtitle">
-          I combine full‑stack development, systems design, and basic networking to deliver complete solutions
-          for small businesses.
+          End‑to‑end development and support for small and growing businesses.
         </p>
         <div class="skills-grid">
           <div class="skill-card">
@@ -417,15 +414,15 @@
           <div class="skill-card">
             <h3>Systems & Apps</h3>
             <p>
-              Custom systems such as management tools (e.g. Nekta Management System), inventory or booking
-              systems, and API-driven web apps.
+              Custom systems such as management tools, inventory or booking systems, and API‑driven web apps
+              tailored to your workflows.
             </p>
           </div>
           <div class="skill-card">
             <h3>Small Business Networking</h3>
             <p>
-              Basic LAN/Wi‑Fi setup, router configuration, IP addressing, and troubleshooting to keep systems
-              online in shops and small offices.
+              Basic LAN/Wi‑Fi setup, router configuration, IP addressing, and troubleshooting to keep your
+              systems online in shops and small offices.
             </p>
           </div>
         </div>
@@ -441,8 +438,7 @@
             <h3>Luckmart – E‑commerce Platform</h3>
             <div class="project-tech">React • Node.js • Express • MongoDB • JWT</div>
             <p>
-              Jumia‑inspired online marketplace MVP with product listing, search, categories, cart, and secure
-              authentication.
+              Online marketplace MVP with product listing, search, categories, cart, and secure authentication.
             </p>
             <ul>
               <li>Product listing, category filters, and search bar.</li>
@@ -460,7 +456,7 @@
             </p>
             <ul>
               <li>Grid layout for phones, laptops, TVs, and accessories.</li>
-              <li>Simple “Order via WhatsApp/Call” actions instead of full checkout.</li>
+              <li>“Order via WhatsApp/Call” actions instead of full checkout.</li>
               <li>Guided client on domain, hosting, and content structure.</li>
             </ul>
           </div>
@@ -469,8 +465,7 @@
             <h3>Nekta Management System – Bee‑Keeping</h3>
             <div class="project-tech">Management System • KCSE Project</div>
             <p>
-              Management system for a bee‑keeping company, built as a KCSE Computer Studies project to manage
-              operations and records.
+              Management system for a bee‑keeping company to organize hives, production, and sales records.
             </p>
             <ul>
               <li>Tracks hives, production, and sales records.</li>
@@ -488,13 +483,11 @@
         <div class="about-content">
           <p>
             I am a diploma‑trained developer (Computer Programming, Cooperative University of Kenya – Karen)
-            and a self‑driven full‑stack learner. I earned a B (Plain) in KCSE with an A in Computer Studies
-            and have been building real systems since high school.
+            with hands‑on experience building e‑commerce platforms and business systems.
           </p>
           <p>
-            From Nekta Management System for a bee‑keeping company to Luckmart, my own e‑commerce platform,
-            I enjoy turning real business problems into working software that is simple for owners and staff
-            to use.
+            Starting from Nekta Management System in high school to Luckmart today, I focus on turning real
+            business processes into simple, reliable software that non‑technical users can work with every day.
           </p>
         </div>
 
@@ -522,8 +515,8 @@
         <div class="contact-grid">
           <div class="contact-info">
             <p>
-              Need a website, system, or help putting your electronics shop or business online? Reach out and
-              let’s talk about what you want to build.
+              Need a website, system, or help putting your electronics shop or business online?
+              Reach out and let’s talk about what you want to build.
             </p>
             <p><strong>Email:</strong> <a href="mailto:kangogoevans6074@gmail.com">kangogoevans6074@gmail.com</a></p>
             <p><strong>Phone / WhatsApp:</strong> <a href="https://wa.me/254745909218" target="_blank">+254 745 909 218</a></p>
